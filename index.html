@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Mesto Russia</title>
+	<link rel="stylesheet" href="pages/index.css">
+</head>
+<body class="page">
+
+	<header class="header">
+		<img src="images/header/header__logo.svg" alt="Логотип место" class="header__logo">
+	</header>
+
+	<main>
+
+		<section class="profile">
+			<img src="images/profile/profile__avatar.jpg" alt="Жак-Ив Кусто" class="profile__avatar">
+			<div class="profile__info">
+				<div class="profile__text">
+					<h1 class="profile__title">Жак-Ив Кусто</h1>
+					<p class="profile__subtitle">Исследователь океана</p>
+				</div>
+				<button  class="profile__edit-button">
+				</button>
+			</div>
+			<button class="profile__add-button">
+				<div class="profile__add-button-plus"></div>
+			</button>
+		</section>
+		
+		<section>
+			<ul class="element-grid">
+				<li class="element-grid__wrapper">
+					<img src="images/element-grid/element-grid__karachaevsk.jpg" alt="Карачаевск" class="element-grid__image-place">
+					<div class="element-grid__detail">
+						<h2 class="element-grid__title">
+							Карачаевск
+						</h2>
+						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+					</div>
+				</li>
+				<li class="element-grid__wrapper">
+					<img src="images/element-grid/element-grid__elbrus.jpg" alt="Гора Эльбрус" class="element-grid__image-place">
+					<div class="element-grid__detail">
+						<h2 class="element-grid__title">
+							Гора Эльбрус
+						</h2>
+						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+					</div>
+				</li>
+				<li class="element-grid__wrapper">
+					<img src="images/element-grid/element-grid__dombai.jpg" alt="Домбай" class="element-grid__image-place">
+					<div class="element-grid__detail">
+						<h2 class="element-grid__title">
+							Домбай
+						</h2>
+						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+					</div>
+				</li>
+				<li class="element-grid__wrapper">
+					<img src="images/element-grid/element-grid__dagestan.jpg" alt="Дагестан" class="element-grid__image-place">
+					<div class="element-grid__detail">
+						<h2 class="element-grid__title">
+							Дагестан
+						</h2>
+						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+					</div>
+				</li>
+				<li class="element-grid__wrapper">
+					<img src="images/element-grid/element-grid__altai.jpg" alt="Алтай" class="element-grid__image-place">
+					<div class="element-grid__detail">
+						<h2 class="element-grid__title">
+							Алтай
+						</h2>
+						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+					</div>
+				</li>
+				<li class="element-grid__wrapper">
+					<img src="images/element-grid/element-grid__sochi.jpg" alt="Красная поляна" class="element-grid__image-place">
+					<div class="element-grid__detail">
+						<h2 class="element-grid__title">
+							Красная поляна, Сочи
+						</h2>
+						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+					</div>
+				</li>
+			</ul>
+		</section>
+
+	</main>
+
+	<footer class="footer">
+		<p class="footer__copyrigh">&#169; 2020 Mesto Russia</p>
+	</footer>
+
+
+	<!-- popup -->
+
+	<aside class="popup">
+		<div class="popup__content">
+			<button class="popup__close-button"></button>
+			<form class="popup__form">
+				<h2 class="popup__title">
+					Редактировать профиль
+				</h2>
+				<div>
+					<input type="text" class="form__item" placeholder="Имя" id="nameInput" value="Жак-Ив Кусто">
+	           	<input type="text" class="form__item" id="jobInput" value="Исследователь океана">
+				</div>
+	            <input type="submit" class="form__button" value="Отправить">
+			</form>
+		</div>
+	</aside>
+	<script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>
