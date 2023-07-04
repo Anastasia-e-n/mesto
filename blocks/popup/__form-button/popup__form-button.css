@@ -8,8 +8,10 @@
 	margin: 48px 0 0 0;
 	transition: opacity 0.3s ease-in;
 	cursor: pointer;
+	border-radius: 2px;
+	line-height: normal;
 }
 
 .popup__form-button:hover {
-	opacity: .7;
+	opacity: .8;
 }

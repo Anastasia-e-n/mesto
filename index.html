@@ -21,11 +21,10 @@
 					<h1 class="profile__title">Жак-Ив Кусто</h1>
 					<p class="profile__subtitle">Исследователь океана</p>
 				</div>
-				<button  class="profile__edit-button">
+				<button type="button" class="profile__edit-button">
 				</button>
 			</div>
-			<button class="profile__add-button">
-				<span class="profile__add-button-plus"></span>
+			<button type="button" class="profile__add-button">
 			</button>
 		</section>
 		
@@ -37,7 +36,7 @@
 						<h2 class="element-grid__title">
 							Карачаевск
 						</h2>
-						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+						<button type="button" class="element-grid__image-like"></button>
 					</div>
 				</li>
 				<li class="element-grid__wrapper">
@@ -46,7 +45,7 @@
 						<h2 class="element-grid__title">
 							Гора Эльбрус
 						</h2>
-						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+						<button type="button" class="element-grid__image-like"></button>
 					</div>
 				</li>
 				<li class="element-grid__wrapper">
@@ -55,7 +54,7 @@
 						<h2 class="element-grid__title">
 							Домбай
 						</h2>
-						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+						<button type="button" class="element-grid__image-like"></button>
 					</div>
 				</li>
 				<li class="element-grid__wrapper">
@@ -64,7 +63,7 @@
 						<h2 class="element-grid__title">
 							Дагестан
 						</h2>
-						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+						<button type="button" class="element-grid__image-like"></button>
 					</div>
 				</li>
 				<li class="element-grid__wrapper">
@@ -73,7 +72,7 @@
 						<h2 class="element-grid__title">
 							Алтай
 						</h2>
-						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+						<button type="button" class="element-grid__image-like"></button>
 					</div>
 				</li>
 				<li class="element-grid__wrapper">
@@ -82,7 +81,7 @@
 						<h2 class="element-grid__title">
 							Красная поляна, Сочи
 						</h2>
-						<img src="images/element-grid/element-grid__like.svg" alt="Лайк" class="element-grid__image-like">
+						<button type="button" class="element-grid__image-like"></button>
 					</div>
 				</li>
 			</ul>
@@ -91,26 +90,26 @@
 	</main>
 
 	<footer class="footer">
-		<p class="footer__copyrigh">&#169; 2020 Mesto Russia</p>
+		<p class="footer__copyright">&#169; 2020 Mesto Russia</p>
 	</footer>
 
 
 	<!-- popup -->
 
 	<aside class="popup">
-		<div class="popup__content">
-			<button class="popup__close-button"></button>
-			<form class="popup__form">
+		<fieldset class="popup__container">
+			<button type="button" class="popup__close-button"></button>
+			<form class="popup__form" name="popup">
 				<h2 class="popup__form-title">
 					Редактировать профиль
 				</h2>
 				<div>
-					<input type="text" class="popup__form-item" placeholder="Имя" id="nameInput" value="Жак-Ив Кусто">
-	           	<input type="text" class="popup__form-item" id="jobInput" value="Исследователь океана">
+					<input type="text" class="popup__form-item" name="nameInput" placeholder="Имя" id="nameInput">
+	           	<input type="text" name="jobInput" class="popup__form-item" id="jobInput">
 				</div>
-	            <input type="submit" class="popup__form-button" value="Отправить">
+	            <input type="submit" class="popup__form-button" value="Сохранить">
 			</form>
-		</div>
+		</fieldset>
 	</aside>
 	<script src="js/index.js"></script>
 </body>

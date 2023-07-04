@@ -9,10 +9,15 @@
 	height: 50px;
 	border: 2px solid #fff;
 	margin: 35px 0 0 0;
+	border-radius: 2px;
+	background: linear-gradient(#fff,#fff), linear-gradient(#fff,#fff);
+	background-position: center;
+	background-size: 22px 2px,2px 22px;
+	background-repeat: no-repeat;
 }
 
 .profile__add-button:hover {
-	opacity: .7;
+	opacity: .6;
 }
 
 @media screen and (max-width: 767px) {
@@ -20,5 +25,8 @@
   		margin: 0;
   		max-width: 282px;
   		width: 100%;
+  		background-size: 16px 2px,2px 16px;
   }
 }
+
+

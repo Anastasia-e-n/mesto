@@ -3,8 +3,13 @@
 	height: 19px;
 	transition: opacity 0.3s ease-in;
 	cursor: pointer;
+	background-image: url(../../../images/element-grid/element-grid__like.svg);
+	border: 0;
+	background-color: transparent;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .element-grid__image-like:hover {
-	opacity: .7;
+	opacity: .5;
 }
