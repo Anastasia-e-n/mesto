@@ -9,9 +9,17 @@
 	transition: opacity 0.3s ease-in;
 	cursor: pointer;
 	border-radius: 2px;
-	line-height: normal;
+	line-height: 21.78px;
+	font-weight: 400;
 }
 
 .popup__form-button:hover {
 	opacity: .8;
+}
+
+@media screen and (max-width: 767px) {
+	.popup__form-button {
+		line-height: 16.94px;
+		font-size: 14px;
+	}
 }

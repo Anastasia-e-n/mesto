@@ -8,6 +8,7 @@
 	background-color: transparent;
 	background-size: contain;
 	background-repeat: no-repeat;
+	flex-shrink: 0; 
 }
 
 .element-grid__image-like:hover {
