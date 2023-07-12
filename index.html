@@ -27,64 +27,10 @@
 			<button aria-label="Добавить" type="button" class="profile__add-button">
 			</button>
 		</section>
-		
+
 		<section>
-			<ul class="element-grid">
-				<li class="element-grid__wrapper">
-					<img src="images/element-grid/element-grid__karachaevsk.jpg" alt="Карачаевск" class="element-grid__image-place">
-					<div class="element-grid__detail">
-						<h2 class="element-grid__title">
-							Карачаевск
-						</h2>
-						<button type="button" class="element-grid__image-like"></button>
-					</div>
-				</li>
-				<li class="element-grid__wrapper">
-					<img src="images/element-grid/element-grid__elbrus.jpg" alt="Гора Эльбрус" class="element-grid__image-place">
-					<div class="element-grid__detail">
-						<h2 class="element-grid__title">
-							Гора Эльбрус
-						</h2>
-						<button type="button" class="element-grid__image-like"></button>
-					</div>
-				</li>
-				<li class="element-grid__wrapper">
-					<img src="images/element-grid/element-grid__dombai.jpg" alt="Домбай" class="element-grid__image-place">
-					<div class="element-grid__detail">
-						<h2 class="element-grid__title">
-							Домбай
-						</h2>
-						<button type="button" class="element-grid__image-like"></button>
-					</div>
-				</li>
-				<li class="element-grid__wrapper">
-					<img src="images/element-grid/element-grid__dagestan.jpg" alt="Дагестан" class="element-grid__image-place">
-					<div class="element-grid__detail">
-						<h2 class="element-grid__title">
-							Дагестан
-						</h2>
-						<button type="button" class="element-grid__image-like"></button>
-					</div>
-				</li>
-				<li class="element-grid__wrapper">
-					<img src="images/element-grid/element-grid__altai.jpg" alt="Алтай" class="element-grid__image-place">
-					<div class="element-grid__detail">
-						<h2 class="element-grid__title">
-							Алтай
-						</h2>
-						<button type="button" class="element-grid__image-like"></button>
-					</div>
-				</li>
-				<li class="element-grid__wrapper">
-					<img src="images/element-grid/element-grid__sochi.jpg" alt="Красная поляна" class="element-grid__image-place">
-					<div class="element-grid__detail">
-						<h2 class="element-grid__title">
-							Красная поляна, Сочи
-						</h2>
-						<button type="button" class="element-grid__image-like"></button>
-					</div>
-				</li>
-			</ul>
+		    <ul class="element-grid">
+		    </ul>
 		</section>
 
 	</main>
@@ -94,23 +40,68 @@
 	</footer>
 
 
-	<!-- popup -->
+	<!-- popup edit -->
 
-	<aside class="popup">
+	<aside class="popup" id="popup_edit">
 		<div class="popup__container">
 			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
-			<form class="popup__form" name="popup-edit-profile">
+			<form class="popup__form" name="popup-edit-profile" id="popup-edit-form">
 				<h2 class="popup__form-title">
 					Редактировать профиль
 				</h2>
 				<fieldset class="popup__form-wrapper">
-					<input type="text" class="popup__form-item" name="nameInput" placeholder="Имя" id="nameInput">
-	           	<input type="text" name="jobInput" class="popup__form-item" id="jobInput">
+					<input type="text" class="popup__form-item" name="nameInput" placeholder="Ваше имя" id="nameInput" required>
+	           		<input type="text" name="jobInput" class="popup__form-item" id="jobInput" placeholder="Вид деятельности" required>
 				</fieldset>
 	            <input type="submit" class="popup__form-button" value="Сохранить">
 			</form>
 		</div>
 	</aside>
-	<script src="js/index.js"></script>
+
+	<!-- popup add -->
+
+	<aside class="popup" id="popup_add">
+		<div class="popup__container">
+			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
+			<form class="popup__form" name="popup-add-profile" id="popup-add-form">
+				<h2 class="popup__form-title">
+					Новое место
+				</h2>
+				<fieldset class="popup__form-wrapper">
+					<input type="text" class="popup__form-item" name="titleInput" placeholder="Название" id="titleInput" required>
+	           		<input type="text" name="linkInput" class="popup__form-item" id="linkInput" placeholder="Ссылка на картинку">
+				</fieldset>
+	            <input type="submit" class="popup__form-button" value="Сохранить">
+			</form>
+		</div>
+	</aside>
+
+	<!-- popup image -->
+
+	<aside class="popup" id="popup_image">
+		<figure class="popup__container popup__container_image">
+			<button type="button" class="popup__close-button"></button>
+			<img class="popup__image" src="/" alt="/">
+			<figcaption class="popup__caption"></figcaption>
+		</figure>
+	</aside>
+
+
+
+	<template id="element-grid_template">
+    	<li class="element-grid__wrapper">
+      		<button class="element-grid__remove" type="button"></button>
+      		<img class="element-grid__image-place" src="images/element-grid/element-grid__karachaevsk.jpg" alt="Карачаевск">
+      		<div class="element-grid__detail">
+       			<h2 class="element-grid__title"></h2>
+        		<button class="element-grid__image-like" type="button"></button>
+      		</div>
+    	</li>
+  	</template>
+
+<script src="js/index.js"></script>
 </body>
 </html>
+
+<!-- 1. при открытии картинки уезжают кнопки
+2. проверить стили -->
