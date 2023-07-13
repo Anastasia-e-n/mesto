@@ -42,7 +42,7 @@
 
 	<!-- popup edit -->
 
-	<aside class="popup" id="popup_edit">
+	<aside class="popup popup_type_profile" id="popup_edit">
 		<div class="popup__container">
 			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
 			<form class="popup__form" name="popup-edit-profile" id="popup-edit-form">
@@ -60,7 +60,7 @@
 
 	<!-- popup add -->
 
-	<aside class="popup" id="popup_add">
+	<aside class="popup popup popup_type_card-add" id="popup_add">
 		<div class="popup__container">
 			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
 			<form class="popup__form" name="popup-add-profile" id="popup-add-form">
@@ -69,7 +69,7 @@
 				</h2>
 				<fieldset class="popup__form-wrapper">
 					<input type="text" class="popup__form-item" name="titleInput" placeholder="Название" id="titleInput" required>
-	           		<input type="text" name="linkInput" class="popup__form-item" id="linkInput" placeholder="Ссылка на картинку">
+	           		<input type='url' name="linkInput" class="popup__form-item" id="linkInput" placeholder="Ссылка на картинку" required>
 				</fieldset>
 	            <input type="submit" class="popup__form-button" value="Сохранить">
 			</form>
@@ -88,7 +88,7 @@
 
 	<!-- card -->
 
-	<template id="element-grid_template">
+	<template class="element-grid_template">
     	<li class="element-grid__wrapper">
       		<button class="element-grid__remove" type="button"></button>
       		<img class="element-grid__image-place" src="images/element-grid/element-grid__karachaevsk.jpg" alt="Карачаевск">
@@ -99,6 +99,7 @@
     	</li>
   	</template>
 
+<script src="js/cards.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

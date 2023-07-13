@@ -3,5 +3,7 @@
 	background-color: #fff;
 	overflow: hidden;
 	position: relative;
-  justify-self: stretch;
+	display: flex;
+	flex-direction: column;
+	
 }
