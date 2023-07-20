@@ -42,7 +42,7 @@
 
 	<!-- popup edit -->
 
-	<aside class="popup popup_type_profile" id="popup_edit">
+	<aside class="popup popup_type_profile popup__overlay_edit" id="popup_edit">
 		<div class="popup__container">
 			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
 			<form class="popup__form" name="popup-edit-profile" id="popup-edit-form">
@@ -60,7 +60,7 @@
 
 	<!-- popup add -->
 
-	<aside class="popup popup popup_type_card-add" id="popup_add">
+	<aside class="popup popup_type_card-add popup__overlay_add" id="popup_add">
 		<div class="popup__container">
 			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
 			<form class="popup__form" name="popup-add-profile" id="popup-add-form">
@@ -78,7 +78,7 @@
 
 	<!-- popup image -->
 
-	<aside class="popup popup_type_image" id="popup_image">
+	<aside class="popup popup_type_image popup__overlay_image" id="popup_image">
 		<figure class="popup__container popup__container_image">
 			<button type="button" class="popup__close-button"></button>
 			<img class="popup__image" src="/" alt="/">
@@ -100,6 +100,7 @@
   	</template>
 
 <script src="js/cards.js"></script>
+<script src="js/validate.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>

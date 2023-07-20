@@ -27,6 +27,12 @@ const titleInput = document.querySelector('#titleInput');
 const linkInput = document.querySelector('#linkInput');
 const elementItemTemplate = document.querySelector('.element-grid_template').content.querySelector('.element-grid__wrapper');
 
+// переменнные для закрытия окна при клике на overlay
+
+const OverlayEdit = document.querySelector('.popup__overlay_edit');
+const OverlayAdd = document.querySelector('.popup__overlay_add');
+const OverlayImage = document.querySelector('.popup__overlay_image');
+
 // функции для вывода изображения и генерации карточки
 
 initialCards.forEach(function(item) {
@@ -74,13 +80,23 @@ function addCard (evt) {
   formAdd.reset();
 };
 
+// функция для закрытия popup esc
+
+function closeEscape(evt) {
+  if (evt.key === "Escape") {
+    closePopup(document.querySelector('.popup_opened'));
+  }
+}
+
 // функции для открытия и закрытия popup
 
 function openPopup(popup) {
+  document.addEventListener('keydown', closeEscape);
 	popup.classList.add('popup_opened')
 };
 
 function closePopup(popup) {
+  document.removeEventListener('keydown', closeEscape);
 	popup.classList.remove('popup_opened')
 };
 
@@ -99,6 +115,8 @@ function handleFormSubmit (evt) {
   	closePopup(popupEdit);
 };
 
+
+
 formEdit.addEventListener('submit', handleFormSubmit);
 formAdd.addEventListener('submit', addCard);
 
@@ -106,3 +124,6 @@ buttonCloseEdit.addEventListener('click', () => closePopup(popupEdit));
 buttonAdd.addEventListener('click', () => openPopup(popupAdd));
 buttonCloseAdd.addEventListener('click', () => closePopup(popupAdd));
 buttonCloseImage.addEventListener('click', () => closePopup(popupImage));
+OverlayEdit.addEventListener('click', () => closePopup(popupEdit));
+OverlayAdd.addEventListener('click', () => closePopup(popupAdd));
+OverlayImage.addEventListener('click', () => closePopup(popupImage));
