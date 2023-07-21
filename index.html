@@ -42,48 +42,55 @@
 
 	<!-- popup edit -->
 
-	<aside class="popup popup_type_profile popup__overlay_edit" id="popup_edit">
+	<aside class="popup popup_type_profile" id="popup_edit">
 		<div class="popup__container">
 			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
-			<form class="popup__form" name="popup-edit-profile" id="popup-edit-form">
+			<form class="popup__form" name="popup-edit-profile" id="popup-edit-form" novalidate>
 				<h2 class="popup__form-title">
 					Редактировать профиль
 				</h2>
 				<fieldset class="popup__form-wrapper">
-					<input type="text" class="popup__form-item" name="nameInput" placeholder="Ваше имя" id="nameInput" required>
-	           		<input type="text" name="jobInput" class="popup__form-item" id="jobInput" placeholder="Вид деятельности" required>
+					<input type="text" class="popup__form-item" name="nameInput" placeholder="Ваше имя" id="nameInput" minlength="2" maxlength="40" required>
+					<span class="popup__error name-input-error" ></span>
+	           		<input type="text" name="jobInput" class="popup__form-item" id="jobInput" placeholder="Вид деятельности" minlength="2" maxlength="200" required>
+	           		<span class="popup__error job-input-error" ></span>
 				</fieldset>
 	            <input type="submit" class="popup__form-button" value="Сохранить">
 			</form>
 		</div>
+		<div class="popup__overlay popup__overlay_edit"></div>
 	</aside>
 
 	<!-- popup add -->
 
-	<aside class="popup popup_type_card-add popup__overlay_add" id="popup_add">
+	<aside class="popup popup_type_card-add" id="popup_add">
 		<div class="popup__container">
 			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
-			<form class="popup__form" name="popup-add-profile" id="popup-add-form">
+			<form class="popup__form" name="popup-add-profile" id="popup-add-form" novalidate>
 				<h2 class="popup__form-title">
 					Новое место
 				</h2>
 				<fieldset class="popup__form-wrapper">
-					<input type="text" class="popup__form-item" name="titleInput" placeholder="Название" id="titleInput" required>
+					<input type="text" class="popup__form-item" name="titleInput" placeholder="Название" id="titleInput" minlength="2" maxlength="30" required>
+					<span class="popup__error title-input-error" ></span>
 	           		<input type='url' name="linkInput" class="popup__form-item" id="linkInput" placeholder="Ссылка на картинку" required>
+	           		<span class="popup__error link-input-error" ></span>
 				</fieldset>
 	            <input type="submit" class="popup__form-button" value="Сохранить">
 			</form>
 		</div>
+		<div class="popup__overlay popup__overlay_add"></div>
 	</aside>
 
 	<!-- popup image -->
 
-	<aside class="popup popup_type_image popup__overlay_image" id="popup_image">
+	<aside class="popup popup_type_image" id="popup_image">
 		<figure class="popup__container popup__container_image">
 			<button type="button" class="popup__close-button"></button>
 			<img class="popup__image" src="/" alt="/">
 			<figcaption class="popup__caption"></figcaption>
 		</figure>
+		<div class="popup__overlay popup__overlay_image"></div>
 	</aside>
 
 	<!-- card -->
