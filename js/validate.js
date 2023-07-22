@@ -1,10 +1,10 @@
 const allClasses = {
-  formSelector: '.popup__form',
-  inputSelector: '.popup__form-item',
-  submitButtonSelector: '.popup__form-button',
-  inactiveButtonClass: 'popup__form-button_inactive',
-  inputErrorClass: 'popup__form-item_error',
-  errorClass: 'popup__error'
+  formSelector: '.form',
+  inputSelector: '.form__item',
+  submitButtonSelector: '.form__button',
+  inactiveButtonClass: 'form__button_inactive',
+  inputErrorClass: 'form__item_type_error',
+  errorClass: 'form__input-error_active'
 };
 
 function showInputError(formElement, inputElement, errorMessage, allClasses) {

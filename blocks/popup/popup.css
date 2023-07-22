@@ -14,9 +14,3 @@
 	opacity: 0;
 	display: flex;
 }
-
-@media screen and (max-width: 767px) {
-  .popup {
-      padding: 0 19px;
-  }
-}

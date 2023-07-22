@@ -6,8 +6,8 @@ const buttonEdit = document.querySelector('.profile__edit-button');
 const nameEdit = document.querySelector('.profile__title');
 const jobEdit = document.querySelector('.profile__subtitle');
 const formEdit = document.querySelector('#popup-edit-form');
-const nameInput = document.querySelector('#nameInput');
-const jobInput = document.querySelector('#jobInput');
+const nameInput = document.querySelector('#name-input');
+const jobInput = document.querySelector('#job-input');
 
 // переменные для вывода изображения
 
@@ -23,8 +23,8 @@ const popupAdd = document.querySelector('.popup_type_card-add');
 const buttonAdd = document.querySelector('.profile__add-button');
 const buttonCloseAdd = popupAdd.querySelector('.popup__close-button');
 const formAdd = document.querySelector('#popup-add-form');
-const titleInput = document.querySelector('#titleInput');
-const linkInput = document.querySelector('#linkInput');
+const titleInput = document.querySelector('#title-input');
+const linkInput = document.querySelector('#link-input');
 const elementItemTemplate = document.querySelector('.element-grid_template').content.querySelector('.element-grid__wrapper');
 
 // переменнные для закрытия окна при клике на overlay

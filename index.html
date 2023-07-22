@@ -45,17 +45,21 @@
 	<aside class="popup popup_type_profile" id="popup_edit">
 		<div class="popup__container">
 			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
-			<form class="popup__form" name="popup-edit-profile" id="popup-edit-form" novalidate>
-				<h2 class="popup__form-title">
+			<form class="form" name="popup-edit-profile" id="popup-edit-form" novalidate>
+				<h2 class="form__title">
 					Редактировать профиль
 				</h2>
-				<fieldset class="popup__form-wrapper">
-					<input type="text" class="popup__form-item" name="nameInput" placeholder="Ваше имя" id="nameInput" minlength="2" maxlength="40" required>
-					<span class="popup__error name-input-error" ></span>
-	           		<input type="text" name="jobInput" class="popup__form-item" id="jobInput" placeholder="Вид деятельности" minlength="2" maxlength="200" required>
-	           		<span class="popup__error job-input-error" ></span>
+				<fieldset class="form__wrapper">
+					<div class="form__item-container">
+						<input type="text" class="form__item" name="name-input" placeholder="Ваше имя" id="name-input" minlength="2" maxlength="40" required>
+						<span class="form__input-error name-input-error" ></span>
+					</div>
+					<div class="form__item-container">
+						<input type="text" name="job-input" class="form__item" id="job-input" placeholder="Вид деятельности" minlength="2" maxlength="200" required>
+	           		<span class="form__input-error job-input-error" ></span>
+					</div>
 				</fieldset>
-	            <input type="submit" class="popup__form-button" value="Сохранить">
+	            <input type="submit" class="form__button" value="Сохранить">
 			</form>
 		</div>
 		<div class="popup__overlay popup__overlay_edit"></div>
@@ -66,17 +70,21 @@
 	<aside class="popup popup_type_card-add" id="popup_add">
 		<div class="popup__container">
 			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
-			<form class="popup__form" name="popup-add-profile" id="popup-add-form" novalidate>
-				<h2 class="popup__form-title">
+			<form class="form" name="popup-add-profile" id="popup-add-form" novalidate>
+				<h2 class="form__title">
 					Новое место
 				</h2>
-				<fieldset class="popup__form-wrapper">
-					<input type="text" class="popup__form-item" name="titleInput" placeholder="Название" id="titleInput" minlength="2" maxlength="30" required>
-					<span class="popup__error title-input-error" ></span>
-	           		<input type='url' name="linkInput" class="popup__form-item" id="linkInput" placeholder="Ссылка на картинку" required>
-	           		<span class="popup__error link-input-error" ></span>
+				<fieldset class="form__wrapper">
+					<div class="form__item-container">
+						<input type="text" class="form__item" name="title-input" placeholder="Название" id="title-input" minlength="2" maxlength="30" required>
+						<span class="form__input-error title-input-error" ></span>
+					</div>
+					<div class="form__item-container">
+						<input type='url' name="link-input" class="form__item" id="link-input" placeholder="Ссылка на картинку" required>
+	           		<span class="form__input-error link-input-error" ></span>
+					</div>
 				</fieldset>
-	            <input type="submit" class="popup__form-button" value="Сохранить">
+	            <input type="submit" class="form__button" value="Сохранить">
 			</form>
 		</div>
 		<div class="popup__overlay popup__overlay_add"></div>
@@ -106,8 +114,9 @@
     	</li>
   	</template>
 
-<script src="js/cards.js"></script>
-<script src="js/validate.js"></script>
-<script src="js/index.js"></script>
+<script src="./js/cards.js" defer></script>
+<script src="./js/index.js" defer></script>
+<script src="./js/validate.js" defer></script>
+
 </body>
 </html>

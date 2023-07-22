@@ -1,4 +1,4 @@
-.popup__form-button_inactive {
+.form__button_inactive {
   opacity: 0.2;
   border: 1px solid black;
   background: none;
@@ -7,7 +7,7 @@
   color: black;
 }
 
-.popup__form-button_inactive:hover {
+.form__button_inactive:hover {
   opacity: 0.2;
   border: 1px solid black;
   background: none;
