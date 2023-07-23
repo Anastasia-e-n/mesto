@@ -18,7 +18,7 @@ const popupCaption = popupImage.querySelector('.popup__caption');
 
 // переменные для добавления карточки
 
-const list = document.querySelector('.element-grid');
+const cardsContainer = document.querySelector('.element-grid');
 const popupAdd = document.querySelector('.popup_type_card-add');
 const buttonAdd = document.querySelector('.profile__add-button');
 const buttonCloseAdd = popupAdd.querySelector('.popup__close-button');
@@ -29,15 +29,15 @@ const elementItemTemplate = document.querySelector('.element-grid_template').con
 
 // переменнные для закрытия окна при клике на overlay
 
-const OverlayEdit = document.querySelector('.popup__overlay_edit');
-const OverlayAdd = document.querySelector('.popup__overlay_add');
-const OverlayImage = document.querySelector('.popup__overlay_image');
+const overlayEdit = document.querySelector('.popup__overlay_edit');
+const overlayAdd = document.querySelector('.popup__overlay_add');
+const overlayImage = document.querySelector('.popup__overlay_image');
 
 // функции для вывода изображения и генерации карточки
 
 initialCards.forEach(function(item) {
   const elementItem = generateCard(item);
-  list.append(elementItem);
+  cardsContainer.append(elementItem);
 });
 
 function generateCard(item) {
@@ -75,10 +75,25 @@ function addCard (evt) {
   const elementItem = generateCard({name: titleInput.value , link: linkInput.value});
 
   evt.preventDefault();
-  list.prepend(elementItem);
+  cardsContainer.prepend(elementItem);
   closePopup(popupAdd);
   formAdd.reset();
 };
+
+// сброс данных полей
+
+buttonCloseAdd.addEventListener('click', function () {
+  closePopup(popupAdd);
+  formAdd.reset();
+}); 
+
+// деактивация кнопки
+
+buttonAdd.addEventListener('click', () => {openPopup(popupAdd);
+  const buttonElement = formAdd.querySelector('.form__button');
+  buttonElement.setAttribute("disabled", "disabled");
+  buttonElement.classList.add('form__button_inactive');
+});
 
 // функция для закрытия popup esc
 
@@ -108,22 +123,20 @@ buttonEdit.addEventListener('click', function (){
 	openPopup(popupEdit);
 }); 
 
-function handleFormSubmit (evt) {
+function editFormSubmit (evt) {
 	evt.preventDefault(); 
 		nameEdit.textContent = nameInput.value;
 		jobEdit.textContent = jobInput.value;
   	closePopup(popupEdit);
 };
 
-
-
-formEdit.addEventListener('submit', handleFormSubmit);
+formEdit.addEventListener('submit', editFormSubmit);
 formAdd.addEventListener('submit', addCard);
 
 buttonCloseEdit.addEventListener('click', () => closePopup(popupEdit));
 buttonAdd.addEventListener('click', () => openPopup(popupAdd));
 buttonCloseAdd.addEventListener('click', () => closePopup(popupAdd));
 buttonCloseImage.addEventListener('click', () => closePopup(popupImage));
-OverlayEdit.addEventListener('click', () => closePopup(popupEdit));
-OverlayAdd.addEventListener('click', () => closePopup(popupAdd));
-OverlayImage.addEventListener('click', () => closePopup(popupImage));
+overlayEdit.addEventListener('mousedown', () => closePopup(popupEdit));
+overlayAdd.addEventListener('mousedown', () => closePopup(popupAdd));
+overlayImage.addEventListener('mousedown', () => closePopup(popupImage));

@@ -41,8 +41,6 @@ const setEventListeners = (formElement, allClasses) => {
   });
 }; 
 
-setEventListeners
-
 function enableValidation(allClasses) {
     const formList = Array.from(document.querySelectorAll(allClasses.formSelector));
   formList.forEach((formElement) => {
