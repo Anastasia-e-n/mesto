@@ -1,3 +1,7 @@
+import { Card } from './Сard.js';
+import { FormValidator } from './FormValidator.js';
+import { initialCards } from './initial-cards.js';
+
 // переменные для редактирования профиля
 
 const popupEdit = document.querySelector('.popup_type_profile');
@@ -11,10 +15,10 @@ const jobInput = document.querySelector('#job-input');
 
 // переменные для вывода изображения
 
-const popupImage = document.querySelector('.popup_type_image');
+export const popupImage = document.querySelector('.popup_type_image');
 const buttonCloseImage = popupImage.querySelector('.popup__close-button');
-const popupImagePic = popupImage.querySelector('.popup__image');
-const popupCaption = popupImage.querySelector('.popup__caption');
+export const popupImagePic = popupImage.querySelector('.popup__image');
+export const popupCaption = popupImage.querySelector('.popup__caption');
 
 // переменные для добавления карточки
 
@@ -35,65 +39,24 @@ const overlayImage = document.querySelector('.popup__overlay_image');
 
 // функции для вывода изображения и генерации карточки
 
-initialCards.forEach(function(item) {
-  const elementItem = generateCard(item);
-  cardsContainer.append(elementItem);
+initialCards.forEach((item) => {
+  cardsContainer.append(createCard(item));
 });
-
-function generateCard(item) {
-  const elementItem = elementItemTemplate.cloneNode(true);
-  const elementItemTitle = elementItem.querySelector('.element-grid__title');
-  const elementItemImage = elementItem.querySelector('.element-grid__image-place');
-  const likeButton = elementItem.querySelector('.element-grid__image-like');
-  const removeButton = elementItem.querySelector('.element-grid__remove');
-  const imageButton = elementItem.querySelector('.element-grid__image-place');
-  elementItemTitle.textContent = item.name;
-  elementItemImage.src = item.link;
-  elementItemImage.alt = item.name;
-
-  likeButton.addEventListener('click', function (){
-    likeButton.classList.toggle('element-grid__image-like_active');
-  });
-
-  removeButton.addEventListener('click', function () {
-    removeButton.closest('.element-grid__wrapper').remove()
-  }); 
-
-  imageButton.addEventListener('click', function () {
-    popupImagePic.src = item.link;
-    popupCaption.textContent = item.name;
-    popupImagePic.alt = item.name;
-    openPopup(popupImage);
-  }); 
-  
-  return elementItem;
-};
 
 // функция добавления карточки 
 
+function createCard(item) {
+  const cardElement = new Card(item, '.element-grid_template');
+  const cardToAppend = cardElement.generateCard();
+  return cardToAppend;
+}
+
 function addCard (evt) {
-  const elementItem = generateCard({name: titleInput.value , link: linkInput.value});
-
   evt.preventDefault();
-  cardsContainer.prepend(elementItem);
+  cardsContainer.prepend(createCard({name: titleInput.value , link: linkInput.value}));
   closePopup(popupAdd);
   formAdd.reset();
-};
-
-// сброс данных полей
-
-buttonCloseAdd.addEventListener('click', function () {
-  closePopup(popupAdd);
-  formAdd.reset();
-}); 
-
-// деактивация кнопки
-
-buttonAdd.addEventListener('click', () => {openPopup(popupAdd);
-  const buttonElement = formAdd.querySelector('.form__button');
-  buttonElement.setAttribute("disabled", "disabled");
-  buttonElement.classList.add('form__button_inactive');
-});
+}
 
 // функция для закрытия popup esc
 
@@ -105,7 +68,7 @@ function closeEscape(evt) {
 
 // функции для открытия и закрытия popup
 
-function openPopup(popup) {
+export function openPopup(popup) {
   document.addEventListener('keydown', closeEscape);
 	popup.classList.add('popup_opened')
 };
@@ -130,6 +93,20 @@ function editFormSubmit (evt) {
   	closePopup(popupEdit);
 };
 
+// сброс данных полей
+
+buttonCloseAdd.addEventListener('click', function () {
+  closePopup(popupAdd);
+  formAdd.reset();
+}); 
+
+// деактивация кнопки
+
+buttonAdd.addEventListener('click', () => {
+  openPopup(popupAdd);
+  addFormValidator.toggleButtonState();
+});
+
 formEdit.addEventListener('submit', editFormSubmit);
 formAdd.addEventListener('submit', addCard);
 
@@ -140,3 +117,19 @@ buttonCloseImage.addEventListener('click', () => closePopup(popupImage));
 overlayEdit.addEventListener('mousedown', () => closePopup(popupEdit));
 overlayAdd.addEventListener('mousedown', () => closePopup(popupAdd));
 overlayImage.addEventListener('mousedown', () => closePopup(popupImage));
+
+const allClasses = {
+  formSelector: '.form',
+  inputSelector: '.form__item',
+  submitButtonSelector: '.form__button',
+  inactiveButtonClass: 'form__button_inactive',
+  inputErrorClass: 'form__item_type_error',
+  errorClass: 'form__input-error_active'
+};
+
+
+const profileFormValidator = new FormValidator(allClasses, popupEdit);
+profileFormValidator.enableValidation();
+
+const addFormValidator = new FormValidator(allClasses, popupAdd);
+addFormValidator.enableValidation();
