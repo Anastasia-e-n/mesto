@@ -47,15 +47,13 @@ initialCards.forEach((item) => {
 
 function createCard(item) {
   const cardElement = new Card(item, '.element-grid_template');
-  const cardToAppend = cardElement.generateCard();
-  return cardToAppend;
+  return cardElement.generateCard();
 }
 
 function addCard (evt) {
   evt.preventDefault();
   cardsContainer.prepend(createCard({name: titleInput.value , link: linkInput.value}));
   closePopup(popupAdd);
-  formAdd.reset();
 }
 
 // функция для закрытия popup esc
@@ -70,7 +68,7 @@ function closeEscape(evt) {
 
 export function openPopup(popup) {
   document.addEventListener('keydown', closeEscape);
-	popup.classList.add('popup_opened')
+  popup.classList.add('popup_opened')
 };
 
 function closePopup(popup) {
@@ -97,13 +95,13 @@ function editFormSubmit (evt) {
 
 buttonCloseAdd.addEventListener('click', function () {
   closePopup(popupAdd);
-  formAdd.reset();
 }); 
 
 // деактивация кнопки
 
 buttonAdd.addEventListener('click', () => {
   openPopup(popupAdd);
+  formAdd.reset();
   addFormValidator.toggleButtonState();
 });
 
@@ -118,7 +116,7 @@ overlayEdit.addEventListener('mousedown', () => closePopup(popupEdit));
 overlayAdd.addEventListener('mousedown', () => closePopup(popupAdd));
 overlayImage.addEventListener('mousedown', () => closePopup(popupImage));
 
-const allClasses = {
+const validationConfig = {
   formSelector: '.form',
   inputSelector: '.form__item',
   submitButtonSelector: '.form__button',
@@ -128,8 +126,8 @@ const allClasses = {
 };
 
 
-const profileFormValidator = new FormValidator(allClasses, popupEdit);
+const profileFormValidator = new FormValidator(validationConfig, popupEdit);
 profileFormValidator.enableValidation();
 
-const addFormValidator = new FormValidator(allClasses, popupAdd);
+const addFormValidator = new FormValidator(validationConfig, popupAdd);
 addFormValidator.enableValidation();
