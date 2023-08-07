@@ -5,27 +5,32 @@ export class Card {
     this._cardData = cardData;
     this._templateSelector = templateSelector;
   }
+
+  _getTemplate() {
+    const _elementCard = document.querySelector(this._templateSelector).content.querySelector('.element-grid__wrapper').cloneNode(true);
+    return _elementCard;
+  }
   
   generateCard() {
-    const _elementItem = document.querySelector(this._templateSelector).content.querySelector('.element-grid__wrapper').cloneNode(true);
-    const image = _elementItem.querySelector('.element-grid__image-place')
-    const title = _elementItem.querySelector('.element-grid__title');
-    this.likeButton = _elementItem.querySelector('.element-grid__image-like');
-    this.removeButton = _elementItem.querySelector('.element-grid__remove');
-    this.imageButton = _elementItem.querySelector('.element-grid__image-place');
+    this._elementItem = this._getTemplate();
+    const image = this._elementItem.querySelector('.element-grid__image-place')
+    const title = this._elementItem.querySelector('.element-grid__title');
+    this._likeButton = this._elementItem.querySelector('.element-grid__image-like');
+    this._removeButton = this._elementItem.querySelector('.element-grid__remove');
+    this._imageButton = this._elementItem.querySelector('.element-grid__image-place');
     image.src = this._cardData.link;
     image.alt = this._cardData.name;
     title.textContent = this._cardData.name;
     this._makeEventListeners();
-    return _elementItem;
+    return this._elementItem;
   }
   
   _like() {
-    this.likeButton.classList.toggle("element-grid__image-like_active");
+    this._likeButton.classList.toggle("element-grid__image-like_active");
   }
   
   _removeCard() {
-    this.removeButton.parentElement.remove()
+    this._removeButton.parentElement.remove()
   }
   
   _preview() {
@@ -36,8 +41,8 @@ export class Card {
   }
 
   _makeEventListeners() {
-    this.likeButton.addEventListener('click', () => this._like());
-    this.removeButton.addEventListener('click', () => this._removeCard());
-    this.imageButton.addEventListener('click', () => this._preview());
+    this._likeButton.addEventListener('click', () => this._like());
+    this._removeButton.addEventListener('click', () => this._removeCard());
+    this._imageButton.addEventListener('click', () => this._preview());
   }
 }

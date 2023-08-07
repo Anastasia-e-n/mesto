@@ -86,9 +86,9 @@ buttonEdit.addEventListener('click', function (){
 
 function editFormSubmit (evt) {
 	evt.preventDefault(); 
-		nameEdit.textContent = nameInput.value;
-		jobEdit.textContent = jobInput.value;
-  	closePopup(popupEdit);
+	nameEdit.textContent = nameInput.value;
+	jobEdit.textContent = jobInput.value;
+  closePopup(popupEdit);
 };
 
 // сброс данных полей
