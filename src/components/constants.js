@@ -5,8 +5,8 @@ const buttonCloseEdit = popupEdit.querySelector('.popup__close-button');
 export const buttonEdit = document.querySelector('.profile__edit-button');
 export const nameEdit = document.querySelector('.profile__title');
 export const jobEdit = document.querySelector('.profile__subtitle');
-export const nameInput = document.querySelector('#name-input');
-export const jobInput = document.querySelector('#job-input');
+export const nameInput = popupEdit.querySelector('#name-input');
+export const jobInput = popupEdit.querySelector('#job-input');
 
 // переменные для вывода изображения
 
