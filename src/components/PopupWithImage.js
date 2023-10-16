@@ -9,11 +9,11 @@ export class PopupWithImage extends Popup {
       this._text = document.querySelector('.element-grid__title');
     }
   
-    open() {
+    open(name, link) {
       super.open();
-      this._popupImage.src = this._image.src;
-      this._popupImage.alt = this._image.alt;
-      this._popupCaption.textContent = this._text.textContent;
+      this._popupImage.src = link;
+      this._popupImage.alt = name;
+      this._popupCaption.textContent = name;
     }
 }
 

@@ -1,5 +1,4 @@
 export class Card {
-
   constructor(data, templateSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
@@ -7,7 +6,6 @@ export class Card {
     this._handleCardClick = handleCardClick;
   }
 
-  // выбор класса шаблона для фотокарточки
   _getTemplate() {
     const cardTemplate = document
       .querySelector(this._templateSelector)
@@ -16,49 +14,44 @@ export class Card {
     return cardTemplate;
   }
 
-  // выбор названия и ссылки изображения из массива
-  _setData() {
-    const text = this._newCard.querySelector('.element-grid__title');
-    text.textContent = this._name;
-    const image = this._newCard.querySelector('.element-grid__image-place');
-    image.src = this._link;
-    image.alt = `Изображение: ${this._name}`;
+  _getElements() {
+    this._image = this._newCard.querySelector('.element-grid__image-place');
+    this._text = this._newCard.querySelector('.element-grid__title');
+    this._likeButton = this._newCard.querySelector('.element-grid__image-like');
+    this._deleteButton = this._newCard.querySelector('.element-grid__remove');
   }
 
-  // слушатель удаления изображения
+  _setData() {
+    this._text.textContent = this._name;
+    this._image.src = this._link;
+    this._image.alt = this._name;
+  }
+
   _handleDeleteButton() {
     this._newCard.remove();
     this._newCard = null;
   }
 
-  // слушатель кнопки лайка
   _handleLikeButton() {
-    const likeButton = this._newCard.querySelector('.element-grid__image-like');
-    likeButton.classList.toggle("element-grid__image-like_active");
+    this._likeButton.classList.toggle('element__button_active');
   }
 
   _popupImageOpen() {
-    this._handleCardClick(this._link, this._name);
+    this._handleCardClick(this._name, this._link);
   }
 
-  // все слушатели
   _setListeners() {
-    // удаление изображения
-    const deleteButton = this._newCard.querySelector('.element-grid__remove');
-    deleteButton.addEventListener('click', this._handleDeleteButton.bind(this));
-    // кнопка лайка
-    const likeButton = this._newCard.querySelector('.element-grid__image-like');
-    likeButton.addEventListener('click', this._handleLikeButton.bind(this));
-
-    // открытие изображения
-    this.image = this._newCard.querySelector('.element-grid__image-place');
-    this.image.addEventListener('click', () => {
+    this._deleteButton.addEventListener('click', this._handleDeleteButton.bind(this));
+    this._likeButton.addEventListener('click', this._handleLikeButton.bind(this));
+    this._image.addEventListener('click', () => {
       this._popupImageOpen();
     });
   }
 
   getView() {
     this._newCard = this._getTemplate();
+    this._getElements();
+    // this._image = this._newCard.querySelector('#element-image');
     this._setData();
     this._setListeners();
     return this._newCard;
