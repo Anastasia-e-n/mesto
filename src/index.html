@@ -44,10 +44,10 @@
 	<aside class="popup popup_type_profile" id="popup_edit">
 		<div class="popup__container">
 			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
+			<h2 class="popup__title">
+				Редактировать профиль
+			</h2>
 			<form class="form" name="popup-edit-profile" id="popup-edit-form" novalidate>
-				<h2 class="form__title">
-					Редактировать профиль
-				</h2>
 				<fieldset class="form__wrapper">
 					<div class="form__item-container">
 						<input type="text" class="form__item" name="name" placeholder="Ваше имя" id="name-input" minlength="2" maxlength="40" required>
@@ -69,10 +69,10 @@
 	<aside class="popup popup_type_card-add" id="popup_add">
 		<div class="popup__container">
 			<button aria-label="Закрыть" type="button" class="popup__close-button"></button>
+			<h2 class="popup__title">
+				Новое место
+			</h2>
 			<form class="form" name="popup-add-profile" id="popup-add-form" novalidate>
-				<h2 class="form__title">
-					Новое место
-				</h2>
 				<fieldset class="form__wrapper">
 					<div class="form__item-container">
 						<input type="text" class="form__item" name="title-input" placeholder="Название" id="title-input" minlength="2" maxlength="30" required>
@@ -112,6 +112,17 @@
       		</div>
     	</li>
   	</template>
+
+	<aside class="popup popup_type_remove">
+		<div class="popup__container">
+			<button type="button" class="button popup__close-button"></button>
+			<h2 class="popup__title">Вы уверены?</h2>
+			<form class="form form_type_add" name="popup-add-profile" novalidate>
+			<button class="button form__button" type="submit">Да</button>
+		  </form>
+		</div>
+		<div class="popup__overlay popup__overlay_add"></div>
+	</aside>
 	
 </body>
 </html>

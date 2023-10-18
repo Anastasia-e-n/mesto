@@ -23,7 +23,7 @@ const userInfo = new UserInfo({
   jobSelector: '.profile__subtitle'
 });
 
-const popupEditForm = new PopupWithForm('.popup_type_profile', 
+const  popupEditProfile = new PopupWithForm('.popup_type_profile', 
   function submitHandler(userData) {
       userInfo.setUserInfo(userData.name, userData.job);
   }
@@ -33,7 +33,7 @@ function handlePopupEditProfile() {
   const userData = userInfo.getUserInfo();
   nameInput.value = userData.name;
   jobInput.value = userData.job;
-  popupEditForm.open();
+  popupEditProfile.open();
 }
 
 const popupWithImage = new PopupWithImage('.popup_type_image');
@@ -59,7 +59,7 @@ const cardSection = new Section(
 );
 cardSection.renderItems();
 
-const popupAddForm = new PopupWithForm('.popup_type_card-add', function submitHandler(formData) {
+const  popupAddCard = new PopupWithForm('.popup_type_card-add', function submitHandler(formData) {
   const data = { name: formData[titleInput.name], link: formData[linkInput.name] };
   cardSection.addItem(createCard(data));
   formAdd.reset();
@@ -74,10 +74,10 @@ addFormValidator.enableValidation();
 buttonEdit.addEventListener('click', handlePopupEditProfile); 
 
 buttonAdd.addEventListener('click', () => {
-  popupAddForm.open();
+  popupAddCard.open();
   addFormValidator.toggleButtonState();
 });
 
-popupEditForm.setEventListeners()
+popupEditProfile.setEventListeners()
 
-popupAddForm.setEventListeners()
+popupAddCard.setEventListeners()
