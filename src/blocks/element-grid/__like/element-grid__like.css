@@ -1,4 +1,4 @@
-.element-grid__image-like {
+.element-grid__like {
 	width: 22px;
 	height: 19px;
 	transition: opacity 0.3s ease-in;
@@ -11,6 +11,6 @@
 	flex-shrink: 0; 
 }
 
-.element-grid__image-like:hover {
+.element-grid__like:hover {
 	opacity: .5;
 }
